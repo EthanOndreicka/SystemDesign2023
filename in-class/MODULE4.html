@@ -6,9 +6,23 @@
   <style>
       html{
         font-family: arial;
+        background-color: aquamarine;
+        color:rgb(44, 90, 75);
       }
       a{
-          text-decoration: none;
+        text-decoration: none;
+      }
+      footer{
+        text-align: center;
+      }
+      h1{
+        color: rgb(113, 160, 160);
+      }
+      p{
+        font-size: large;
+      } 
+      img{
+        border-radius: 25px;
       }
   </style>
 </head>
@@ -16,20 +30,67 @@
 <body>
 
   <h1> Module 4: An Introduction to CSS </h1>
+  <h2 style="color: blueviolet;">This is a header 2 :0</h2>
 
   <p> Here is a
       <a href="https://foxtrack.invisionapp.com/board/FoxTracker-cldxdp4rn0c0x0vsajn1uz2q9" target="_blank">link</a>
       to my vision board!
 
   <p> An "affordance" is tbd.
-  <p> A "signifier" is tbd.
+  <p style="color: palevioletred;"> A "signifier" is tbd.
   <p> A "constraint is" is tbd.
-  <p> Here is an image:
+  <p> Here is an image: <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/YellowLabradorLooking.jpg/640px-YellowLabradorLooking.jpg" width="2000" height="400">
+
+  <div id="div1" style="color: purple;">
+    <p>
+      Here is a <a href="https://foxtrack.invisionapp.com/board/FoxTracker-cldxdp4rn0c0x0vsajn1uz2q9" target="_blank">link</a>
+      to my vision board!
+    </p>
+  </div>
+
+  <div id="div2" style="color: darkgreen;">
+    <p>
+      An affordance is TBD
+    </p>
+    <p>
+      A signifier is TBD
+    </p>
+    <p>
+      A constraint is TBD
+    </p>
+  </div>
+
+  <div id="div3" style="color: maroon;">
+    <p> Here is an image: <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/YellowLabradorLooking.jpg/640px-YellowLabradorLooking.jpg" width="2000" height="400">
+  </div>
+
+  <button onclick="updateDiv1()">Click me to change div1</button>
+  <button onclick="updateDiv2()">Click me to change div2</button>
+  <button onclick="updateDiv3()">Click me to change div3</button>
 
   <footer>
   <hr>
-  <small> &copy; E. Tokash, Ondreicka 13,2023  </small>
+  <small> &copy; E. Ondreicka - Feb 13,2023  </small>
   </footer> 
+
+  <script>
+    function updateDiv1(){
+      var division = document.getElementById("div1")
+      division.style.color = "red";
+      division.style.fontSize = "50px";
+    }
+    function updateDiv2(){
+        var division = document.getElementById("div2")
+        division.style.color = "blue";
+        division.style.fontSize = "50px";
+    }
+    function updateDiv3(){
+        var division = document.getElementById("div3")
+        division.style.color = "green";
+        division.style.fontSize = "50px";
+        division.style.fontFamily = "times new roman";
+    }
+  </script>
 
 </body>
 </html>
