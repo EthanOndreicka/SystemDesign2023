@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <br>Enter your username <input type="text" id="userName" placeholder="User Name">
+    <br>Enter your password <input type="password" id="password" placeholder="Password">
+    <p> <button onclick="checkBlank()"> Login</button></p>
+</body>
+
+<script>
+    function checkBlank(){
+        var user = document.getElementById("userName");
+        var pass = document.getElementById("password");
+
+        userName = user.value.trim();
+        password = pass.value.trim();
+
+        if (userName == ""){
+            alert("Please enter a username!");
+        }
+        else if (password == ""){
+            alert("Please enter a password!");
+        }
+        else{
+            alert("Login successfull");
+        }
+    }
+</script>
+</html>

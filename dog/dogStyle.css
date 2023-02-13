@@ -1,0 +1,148 @@
+.nav {
+    background-color: rgb(75, 58, 92);
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px;
+    color: white
+}
+
+.nav a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Bitter', serif;
+}
+
+.nav a:hover{
+    opacity: .3;
+}
+
+div.header{
+    color: white;
+}
+
+/*For top page text*/
+h1{
+    color: white;
+    font-family: 'Bitter', serif;
+    text-align: center;
+}
+
+h1 a{
+    text-decoration: none;
+}
+
+h1 a:visited{
+    text-decoration: none;
+}
+
+h2{
+    font-family: 'Bitter', serif;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+}
+
+h2 a{
+    text-decoration: none;
+    color: white;
+}
+
+h3 {
+    font-family: 'Bitter', serif;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+}
+
+p{
+    font-family: 'Bitter', serif;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+}
+
+p2{
+    color: rgb(146, 146, 146);
+    font-size: 10px;
+}
+
+div.gallery {
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 180px;
+    padding: 10px;
+}
+
+div.gallery:hover {
+    opacity: .2;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+    font-family: 'Bitter', serif;
+    color: white;
+}
+
+div.theDawg{
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 500px;
+    padding: 10px;
+}
+
+div.theDawg img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+div.joinMessage {
+    font-family: 'Bitter', serif;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.joinButton {
+  background-color: #5d1872;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.joinButton:hover{
+    background-color: #7f229b;
+}
+
+body{
+    background-color: rgb(48, 48, 77);
+}
+footer {
+text-align: center;
+padding: 3px;
+background-color: rgb(255, 255, 255);
+color: white;
+}

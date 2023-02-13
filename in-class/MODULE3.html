@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <style>
+    button{
+      border-radius: 5px;
+      border-color: rgb(66, 165, 204);
+      background-color: white;
+    }
+  </style>
+  <title> Module 3 </title>  
+  <meta charset="UTF-8">
+</head>
+
+<body>  <h1> Module 3: Input Fields, CSS &amp; JavaScript </h1>
+
+  <h2> &#10004; Input Fields </h2>
+
+  <ul>
+    <li><strong>Here is an input box</strong>
+    <br>Enter first name <input type="text" id="firstName" placeholder="First Name">
+    <br>Enter last name <input type="text" id="lastName" value="Smith">
+    <br>Enter address <input type="text" id="address" placeholder="address" autofocus>
+    <br>Enter zip code <input type="text" id="zipCode" placeholder="zip code" maxlength="5">
+    <br>Enter comments <input type="text" id="comments" size="5">
+    <br>Here is an email <input type="email" id="email">
+    <br>Here is a file <input type="file" id="file">
+    <br>Herer is a date <input type="date" id="date">
+    </li>
+  </ul>
+
+  <h2> &#10004; JavaScript </h2>
+
+  <p id="someText"></p>
+  <p> <button onclick="doSomething()"> My first button</button></p>
+  <p><button onclick="updateText()">Another Button </button></p>
+  <p><button onclick="changeLast()">Change the Value</button></p>
+
+
+
+  <footer>
+  <hr>
+  <small> &copy; Ethan Ondreicka February 6,2023  </small>
+  </footer> 
+
+  <script>
+    function doSomething(){
+      var element = document.getElementById("firstName");
+      firstName = element.value.trim();
+      
+      if(firstName == ""){
+        alert("Please enter a first name");
+      }
+      else {
+        alert("Your first name is " + firstName + "!");
+      }
+    }
+
+    function updateText(){
+      var someText = document.getElementById("someText");
+      someText.textContent = "We're writing this with JS";
+    }
+
+    function changeLast(){
+      var lastName = document.getElementById("lastName");
+      lastName.value = Smitty;
+    }
+  </script>
+
+</body>
+</html>
+
