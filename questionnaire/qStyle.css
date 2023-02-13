@@ -1,5 +1,5 @@
 body{
-    background-image: linear-gradient(rgba(31, 31, 31, 0.699),rgba(22, 22, 22, 0.897)), url('marist.jpg');
+    background-image: linear-gradient(rgba(22, 22, 22, 0.699),rgba(8, 8, 8, 0.897)), url('marist.jpg');
     background-size: 150% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed; 
@@ -31,7 +31,7 @@ input[type=text], select{
     box-sizing: border-box;
 }
 input[type=text]:hover{
-    background-color: #e6e6e6;
+    background-color: #dadada;
 }
 input[type=submit]{
     font-family: 'Poppins', sans-serif;
