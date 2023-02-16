@@ -22,7 +22,7 @@ ul li{
 }
 input[type=text], select{
     font-family: 'Poppins', sans-serif;
-    width: 50%;
+    width: 70%;
     padding: 20px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -99,6 +99,7 @@ footer{
     position: relative;
     padding-left: 30px;
     margin-bottom: 12px;
+    margin: 0 10px 0 10px;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
@@ -111,6 +112,7 @@ footer{
     font-family: 'poppins', sans-serif;
     color: white;
     text-align: center;
+    margin: 0 10px 0 10px;
   }
   
   /* Hide the browser's default radio button */
@@ -118,6 +120,7 @@ footer{
     position: absolute;
     opacity: 0;
     cursor: pointer;
+    margin: 0 10px 0 10px;
   }
   
   /* Create a custom radio button */
