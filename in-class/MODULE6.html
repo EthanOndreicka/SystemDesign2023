@@ -11,31 +11,46 @@
             color: black;
             font-family: arial;
         }
+
+        div{
+            border: solid black;
+            border-width: 2px;
+            padding: 5px;
+            margin: 10px;
+            width: 30%;
+            float: left;
+        }
+        .fullWidth{
+            width: 100%;
+        }
     </style>
 </head>
-<body>
+<body onload="onLoad()">
     <h1>DIV's and JavaScript</h1>
-    <div id="div1" >
+    <div id="div1">
         <p> This is the first division. </p>
     </div>
     <div id="div2">            
     </div>
     <div id="div3" >
-        <img src="https://aptokash.github.io/Home/ZMarist_Logo.png"
-             id="image1" width=100px heigth=100px>        
+        <img id="pic" src="https://aptokash.github.io/Home/ZMarist_Logo.png"
+             id="image1" width=100px heigth=100px>      
     </div>
+    <p style="clear: left;"></p> 
+    
     <div id="div4" >    
         <p> This is the fourth division. </p>
     </div>
     <div id="div5" >        
         <p> This is the fifth division. </p>
     </div>
-    <div id="div6" >        
+    <div id="div6">  
+         
     </div>
-    
-    <div id="buttons">
-       <input type=button onclick="" id="button1" value="Button 1"></button>
-       <input type=button onclick="" id="button2" value="Button 2"></button>
+    <p style="clear: left;"></p> 
+    <div id="buttons" class="fullWidth">
+       <input type=button onclick="button1()" id="button1" value="Set"></button>
+       <input type=button onclick="button2()" id="button2" value="Change Pic"></button>
        <input type=button onclick="" id="button3" value="Button 3"></button>
     </div>  
     
@@ -45,6 +60,34 @@
     Ethan Ondreicka   Feb 27, 2023
 </footer>
 <script>
+
+    globalAuthor = "Ethan Ondreicka";
+
+    function onLoad(){
+        document.getElementById("div2").innerHTML = "<p style='color:blue;'>" + "<strong>Dog</strong>";
+        document.getElementById("div6").innerHTML = "Raccoon";
+        document.getElementById("div5").innerHTML = "Coded By: " + globalAuthor;
+    }
+
+    function button1(){
+        but1 = document.getElementById("button1")
+        if (but1.value == "Set"){
+            but1.value = "Unset"
+            but1.style.backgroundColor="blue";
+            but1.style.color="white";
+        }
+        else{
+            but1.value = "Set";
+            but1.style.backgroundColor="black";
+            but1.style.color="white";
+        }
+    }
+
+    function button2(){
+        but2 = document.getElementById("button2")
+        var pic = document.getElementById('pic');
+        pic.src = "https://aptokash.github.io/Home/Zieee.jpg"
+    }
 
 </script>
 </html>
