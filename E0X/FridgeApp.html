@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/f12bd04d75.js' crossorigin='anonymous'></script>
+    <title>Fridge App</title>
+    <style>
+        body{
+            font-family: arial;
+            background-color: rgb(112, 199, 221);
+            color: white;
+        }
+        #powerButton{
+            border-radius: 10px;
+            background-color: rgb(179, 179, 179);
+            color: white;
+        }
+        h1{
+            display: inline;
+            padding-left: 26px;
+        }
+        #allTemp{
+            text-align: center;
+        }
+        .tempButtons{
+            font-size: 30px;
+        }
+        #temp{
+            font-size: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button id="powerButton" style='font-size:24px' value="off" onclick="thePowerButton()"><i class='fas fa-power-off'></i></button>
+        <h1>Fridge Application</h1>
+        <h1>3:34 PM</h1>
+        <div id="allTemp">
+            <p id="temp">40º</p>
+            <div class="tempButtons">
+                <input type="button" onclick="increaseTemp()" id="plusTempButton">+</i></button> 
+                <input type="button" onclick="decreaseTemp()" id="minusTempButton">-</i></button> 
+            </div>
+        </div>
+</body>
+<script>
+
+    globalTemp = 40;
+
+    function increaseTemp(){
+        increaseButton = document.getElementById("plusTempButton");
+        globalTemp += 1;
+        document.getElementById("temp").innerHTML = globalTemp + "º";
+    }
+
+    function decreaseTemp(){
+        lowerButton = document.getElementById("minusTempButton");
+        globalTemp -= 1;
+        document.getElementById("temp").innerHTML = globalTemp + "º";
+    }
+
+    function thePowerButton(){
+        powbutton = document.getElementById("powerButton");
+        if (powbutton.value == "off"){
+            powbutton.value = "on";
+            powbutton.style.backgroundColor =  "rgb(57, 67, 160)";
+            powbutton.style.color = "white";
+        }
+        else{
+            powbutton.value = "off";
+            powbutton.style.backgroundColor = "rgb(179, 179, 179)";
+            powbutton.style.color = "white";
+        }
+    }
+</script>
+</html>
