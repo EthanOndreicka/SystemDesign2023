@@ -21,44 +21,76 @@
             display: inline;
             padding-left: 26px;
         }
-        #allTemp{
-            text-align: center;
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid white;
         }
-        .tempButtons{
-            font-size: 30px;
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
         }
-        #temp{
+
+        button {
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: white;
+            color: white;
+            background-color: rgb(178, 225, 236);
+            font-size: large;
+        }
+
+        p#temp {
             font-size: 100px;
-            text-align: center;
+            margin-right: 10px;
         }
+
+
     </style>
 </head>
-<body>
+<body onload="doStartClock()">
     <button id="powerButton" style='font-size:24px' value="off" onclick="thePowerButton()"><i class='fas fa-power-off'></i></button>
         <h1>Fridge Application</h1>
-        <h1>3:34 PM</h1>
-        <div id="allTemp">
-            <p id="temp">40º</p>
-            <div class="tempButtons">
-                <input type="button" onclick="increaseTemp()" id="plusTempButton">+</i></button> 
-                <input type="button" onclick="decreaseTemp()" id="minusTempButton">-</i></button> 
+        <h1 id="timePar" style="font-family: arial;">00:00:00</h1>
+        <div class="container">
+            <p id="temp">37º</p>
+            <div class="button-container">
+              <button onclick="increaseTemp()" id="plusTempButton">+</button>
+              <button onclick="decreaseTemp()" id="minusTempButton">-</button>
             </div>
-        </div>
+          </div>
+          
 </body>
 <script>
 
-    globalTemp = 40;
+    globalTemp = 37;
 
     function increaseTemp(){
         increaseButton = document.getElementById("plusTempButton");
         globalTemp += 1;
         document.getElementById("temp").innerHTML = globalTemp + "º";
+        if (globalTemp >= 40){
+            increaseButton.style.visibility = "hidden";
+        }
+        if (globalTemp > 32){
+            lowerButton.style.visibility = "visible";
+        }
     }
 
     function decreaseTemp(){
         lowerButton = document.getElementById("minusTempButton");
         globalTemp -= 1;
         document.getElementById("temp").innerHTML = globalTemp + "º";
+        if (globalTemp < 40){
+            increaseButton.style.visibility = "visible";
+        }
+        if (globalTemp <= 32){
+            lowerButton.style.visibility = "hidden";
+        }
     }
 
     function thePowerButton(){
@@ -73,6 +105,21 @@
             powbutton.style.backgroundColor = "rgb(179, 179, 179)";
             powbutton.style.color = "white";
         }
+    }
+
+    function doStartClock(){
+        setInterval(doClockTick, 1000);
+    }
+
+    function doClockTick(){
+        var currentDate = new Date();
+        var hours = currentDate.getHours();
+        var mins = currentDate.getMinutes();
+        var secs = currentDate.getSeconds();
+        var timeString = hours+ ":" + mins +":"+secs
+
+        var outputElement = document.getElementById("timePar");
+        outputElement.textContent=timeString;
     }
 </script>
 </html>
