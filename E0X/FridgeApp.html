@@ -16,6 +16,11 @@
             border-radius: 10px;
             background-color: rgb(179, 179, 179);
             color: white;
+            transition-duration: 0.4s;
+        }
+        #powerButton:hover{
+            cursor: pointer;
+            text-shadow: 0px 0px 20px black;
         }
         h1{
             display: inline;
@@ -26,7 +31,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: solid white;
+            /*visibility: hidden; <-- change when done*/
         }
 
         .button-container {
@@ -42,11 +47,36 @@
             color: white;
             background-color: rgb(178, 225, 236);
             font-size: large;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-right: 10px;
         }
 
         p#temp {
             font-size: 100px;
             margin-right: 10px;
+        }
+
+        .buttonSize{
+            height: 30px;
+            width: 30px;
+            transition-duration: 0s
+        }
+
+        .buttonSize:hover{
+            background-color: rgb(61, 82, 202);
+        }
+        .bottomButtons-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        .topButtons{
+            transition-duration: 0.4s;
+        }
+        .topButtons:hover{
+            background-color: rgb(61, 82, 202);
         }
 
 
@@ -56,19 +86,30 @@
     <button id="powerButton" style='font-size:24px' value="off" onclick="thePowerButton()"><i class='fas fa-power-off'></i></button>
         <h1>Fridge Application</h1>
         <h1 id="timePar" style="font-family: arial;">00:00:00</h1>
-        <div class="container">
+        <div class="container" id="allTemp">
             <p id="temp">37º</p>
             <div class="button-container">
-              <button onclick="increaseTemp()" id="plusTempButton">+</button>
-              <button onclick="decreaseTemp()" id="minusTempButton">-</button>
+              <button onclick="increaseTemp()" id="plusTempButton" class="buttonSize">+</button>
+              <button onclick="decreaseTemp()" id="minusTempButton" class="buttonSize">-</button>
             </div>
           </div>
+        <div class="bottomButtons-container">
+            <div class="topButtons">
+                <button>View Fridge</button>
+                <button>View Tv</button>
+                <button>View Internet</button>
+            </div>
+            <div class="bottomButton">
+                <button>Apps</button>
+            </div>
+        </div>
           
 </body>
 <script>
 
     globalTemp = 37;
 
+    // Increases temp when pressing button
     function increaseTemp(){
         increaseButton = document.getElementById("plusTempButton");
         globalTemp += 1;
@@ -80,43 +121,62 @@
             lowerButton.style.visibility = "visible";
         }
     }
-
+    // Decreases temp when pressing button
     function decreaseTemp(){
         lowerButton = document.getElementById("minusTempButton");
         globalTemp -= 1;
         document.getElementById("temp").innerHTML = globalTemp + "º";
-        if (globalTemp < 40){
-            increaseButton.style.visibility = "visible";
-        }
         if (globalTemp <= 32){
             lowerButton.style.visibility = "hidden";
         }
+        if (globalTemp < 40){
+            increaseButton.style.visibility = "visible";
+        }
     }
-
+    // "turns fridge off and on"
     function thePowerButton(){
         powbutton = document.getElementById("powerButton");
+        tempStuff = document.getElementById("allTemp");
+        time = document.getElementById("timePar");
         if (powbutton.value == "off"){
             powbutton.value = "on";
             powbutton.style.backgroundColor =  "rgb(57, 67, 160)";
             powbutton.style.color = "white";
+            tempStuff.style.visibility = "visible";
+            time.style.visibility = "visible";
         }
         else{
             powbutton.value = "off";
             powbutton.style.backgroundColor = "rgb(179, 179, 179)";
             powbutton.style.color = "white";
+            tempStuff.style.visibility = "hidden";
+            time.style.visibility = "hidden";
         }
     }
-
+    // starts clock
     function doStartClock(){
         setInterval(doClockTick, 1000);
     }
-
+    // clock function
     function doClockTick(){
         var currentDate = new Date();
+        var mid = 'pm';
+        var twentyFourHour = getHours();
+        if(twentyFourHour < 12){
+            mid = 'am';
+        }
         var hours = currentDate.getHours();
+        if (hours > 12){
+            hours = hours - 12;
+        }
+        if (hours == 0){
+            hours = 12;
+        }
         var mins = currentDate.getMinutes();
-        var secs = currentDate.getSeconds();
-        var timeString = hours+ ":" + mins +":"+secs
+        if (mins < 10){
+            mins = "0" + mins;
+        }
+        var timeString = hours+ ":" + mins + mid;       
 
         var outputElement = document.getElementById("timePar");
         outputElement.textContent=timeString;
