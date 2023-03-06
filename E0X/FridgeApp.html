@@ -125,13 +125,16 @@
           </div>
         <div class="bottomPageButtons-container">
             <div class="topButtons">
-                <button>View Fridge</button>
+                <button onclick="viewFridge">View Fridge</button>
                 <button>View Tv</button>
                 <button>View Internet</button>
             </div>
             <div class="bottomButton">
                 <button><i class="fa-solid fa-bars"></i></button>
             </div>
+        </div>
+        <div>
+            <img id="fridge" src=" ">
         </div>
           
 </body>
@@ -224,6 +227,11 @@
 
         var outputElement = document.getElementById("timePar");
         outputElement.textContent=timeString;
+    }
+
+    function viewFridge(){
+        var pic = document.getElementById('pic');
+        pic.src = "https://aptokash.github.io/Home/Zieee.jpg"
     }
 </script>
 </html>
