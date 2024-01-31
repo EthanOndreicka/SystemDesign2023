@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> D01-Bonilla </title>
+  <meta charset="UTF-8">
+
+  <style>
+    body {
+      background-color: grey; 
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .blackBox {
+      color: white;
+      background-color: black;
+      width: 600px; 
+      height: 250px;
+      margin: 2px;
+    }
+
+    .floatRight {
+      float: right;
+      padding: 0px 20px;
+    }
+
+    .clearRight {
+      clear: right;
+    }
+
+    .row1,
+    .row2,
+    .row3 {
+      display: flex;
+      justify-content: center;
+    }
+
+    #div1,
+    #div2 {
+      border: 2px solid red;
+    }
+
+    #div3,
+    #div4 {
+      border: 2px solid yellow;
+    }
+
+    #div5,
+    #div6 {
+      border: 2px solid blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="group1">
+      <div class="row1">
+        <div id="div1" class="blackBox">
+          <h3>Cat</h3>
+        </div>
+
+        <div id="div2" class="blackBox">
+          <h3>Cat</h3>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div id="div3" class="blackBox">
+          <h3>Cat</h3>
+        </div>
+
+        <div id="div4" class="blackBox">
+          <h3>Cat</h3>
+        </div>
+      </div>
+
+      <div class="row3">
+        <div id="div5" class="blackBox">
+          <h3>Cat</h3>
+        </div>
+
+        <div id="div6" class="blackBox">
+          <h3>Cat</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="color: white">
+    <hr>
+    <small> &copy; A. Bonilla, March 21, 2023  </small>
+  </footer>
+</body>
+</html>
